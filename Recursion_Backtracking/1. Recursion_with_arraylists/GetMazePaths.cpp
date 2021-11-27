@@ -26,3 +26,4 @@ vector <string> getMazePaths(int sr, int sc, int dr, int dc) {
     
     return allPaths;    
 }
+    

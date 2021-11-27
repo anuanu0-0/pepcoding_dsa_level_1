@@ -15,3 +15,24 @@ int cs_it(int arr[], int n){
     return dp[0];
 }
 
+// Recursive DP
+// Changed function signature
+int cs(vector<int> arr, int n, vector<int> dp){
+    // Base case
+    if(arr.size()==n) {
+        return 1;
+    }
+    if(n>arr.size())
+        return 0;
+
+    // Look up
+    if(dp[n]!=0)
+        return dp[n];
+        
+    // Recursive case
+    for(int i=1; i<=arr[n]; i++) {
+        dp[n]+=cs(arr, n+i, dp);
+    }
+    
+    return dp[n];
+}
