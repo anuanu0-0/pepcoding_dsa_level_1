@@ -2,31 +2,32 @@
 using namespace std;
 
 int countEncoding(string code) {
-    int n = code.size();
-
-    // Base cases
-    if(n==1 && code[n-1]=='0')
-        return 0;
-    else if(n>1) 
-        if(code[n-1]=='0' && code[n-2]-'0'>2)
-            return 0;
-    
-    vector<int> dp(n);
+    vector<int> dp(code.size()+1);
     dp[0]=1;
-    for(int i=1; i<n; i++) {
-        
-        // Add this char to previous results i.e + 1
-        dp[i] = dp[i-1];
-        // Check if this char and last char combined is less than 27
-        int firstDigit = code[i-1] - '0';
-        char secondDigit  = code[i] - '0';
-        int num = firstDigit*10 + secondDigit;
-        if(num<=26 && firstDigit!=0){
-            dp[i]+=1;
+
+    for(int i=1; i<code.size(); i++) {
+        int num1 = code[i-1] -'0';
+        int num2 = code[i] - '0';
+        if(num1==0 && num2==0) {
+            dp[i]=0;
+        } else if(num1==0 && num2!=0) {
+            dp[i]=dp[i-1];
+        } else if(num1!=0 && num2==0) {
+            if(num1==1 || num1==2){
+                dp[i] = i>=2 ? dp[i-2]:1;
+            }
+            else 
+                dp[i]=0;
+        }
+        else {
+            if(num1*10+num2<=26){
+                dp[i]=dp[i-1] + (i>=2 ? dp[i-2]:1);
+            } 
+            else{
+                dp[i]=dp[i-1];
+            }
         }
     }
-
-    return dp[code.size()-1];
 }
 
 int main() {
