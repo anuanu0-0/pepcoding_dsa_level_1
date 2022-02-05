@@ -2,6 +2,7 @@
 #include <vector>
 using namespace std;
 
+// 2D DP
 int minCost(int n, int m, vector<vector<int>> &arr, vector<vector<int>> &dp ) {
 
   for(int i=n-1; i>=0; i--) {

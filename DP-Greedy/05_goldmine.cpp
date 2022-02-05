@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// 2D DP
 int collectGold(int n, int m, vector<vector<int>>& arr, vector<vector<int>>& dp) {
 
   for(int j=m-1; j>=0; j--) {
