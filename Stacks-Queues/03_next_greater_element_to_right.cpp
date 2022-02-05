@@ -34,8 +34,7 @@ vector<int> solve(vector<int>arr) {
     return res;
 }
 
-int main(int argc, char **argv)
-{  
+int main(int argc, char **argv) {  
     int n;
     cin>>n;
     vector<int>arr(n,0);

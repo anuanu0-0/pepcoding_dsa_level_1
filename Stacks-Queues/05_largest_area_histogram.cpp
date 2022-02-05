@@ -32,7 +32,7 @@ void slidingWindowMax(int n, vector<int> arr, int k) {
 }
 
 
-int main(){
+int main() {
 	int n;
 	cin >> n;
 	vector<int> arr(n);

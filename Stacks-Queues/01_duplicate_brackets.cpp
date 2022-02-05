@@ -12,14 +12,13 @@ bool hasDuplicateBrackets(string str) {
         }
         else s.push(ch);
     }
-
+ 
     return false;
 }
 
 
 
-int main(int argc, char **argv)
-{ 
+int main(int argc, char **argv) { 
    string s;
    getline(cin, s);
    cout << boolalpha << hasDuplicateBrackets(s) << endl;

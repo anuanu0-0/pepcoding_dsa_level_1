@@ -2,6 +2,7 @@
 using namespace std;
 
 vector<int> solve(vector<int>arr) {
+    
     stack<int> s;
     vector<int> res;
 

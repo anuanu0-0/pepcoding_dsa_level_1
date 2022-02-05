@@ -29,8 +29,7 @@ bool hasBalancedBrackets(string str)
     return s.empty();
 }
 
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv) {
     string str;
     getline(cin, str);
 
